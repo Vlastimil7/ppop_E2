@@ -1,0 +1,90 @@
+
+<!DOCTYPE html>
+<html lang="cs">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ppop</title>
+</head>
+<!-- <link rel="stylesheet" href="https://powerforge2.s3.eu-central-1.amazonaws.com/shared/E2/ppop_E2.css"> -->
+ <!-- <link rel="stylesheet" href="./CSS/ppop_E2.css"> -->
+ <link rel="stylesheet" href="../ppop_E2_1.css">
+
+ <body>
+    <img id="ppopImg" style="height: 100vh; width: 100%; object-fit: cover;" src="./IMG/mainpop.jpg" alt="PowerPop main image"> <!-- pouze na test pozadi pak smazat-->
+    <!-- The Modal -->
+    <div id="ppopOverlay" class="modal">
+        <!-- Modal content -->       
+        <div id="ppopModalContent" class="modal-content ">
+            <button id="ppopClose" class="close">&times;</button>
+            <div class="modal-body">
+                <div id="ppopcontent" class="modal-left">
+                    <h2 id="ppopSubscribeTitle">Ty nejlepší nabídky zasíláme nejdříve emailem!</h2>
+                    <p id="ppopSubscribeText">Zaregistrujte se k jejich odběru a jako bonus získáte slevu -100 Kč na první objednávku.</p>
+                    
+                     <input class="buttons-input" id="ppopEmailInput" name="email" type="email" autocomplete="email"
+                        placeholder="Vložte svůj email">
+                    
+                    <div id="ppopMessages" class="ppop-messages">
+                        <span id="ppopMessages" style="display:none"></span>
+                    </div>
+                    <div id="ppopCheckbox" class="accept-checkbox">
+                        <input id="ppopConsentCheckbox" type="checkbox" name="accept">
+                        <label for="ppopConsentCheckbox">Souhlasím se zpracováním osobních údajů pro marketingové účely.</label>
+                    </div>
+                    
+                        <button  class="button-send" id="ppopSubmitButton">Odeslat</button>
+               
+                    <button id="ppopCloseText" class="button-close-text">Nemám zájem, připlatím si.</button>
+                   
+                </div>
+
+                <div class="modal-right">
+                    <img id="ppopImg" src="./IMG/mainpop.jpg" alt="PowerPop main image">                
+                </div>
+                
+            </div> <!-- Konec .modal-body -->
+        </div> <!-- Konec #ppopModalContent -->
+    </div> <!-- Konec #ppopOverlay -->
+    <div id="ppopMinimizedPopup" class="ppop-minimized-popup-content">-100 Kč na první nákup</div>
+    <div id="ppopSticker" class="ppop-sticker"></div>
+</body>
+
+
+</html>
+
+<script>
+    // Uzavření modálního okna při kliknutí na tlačítko .close
+    document.querySelector('.close').addEventListener('click', () => {
+      document.getElementById('ppopOverlay').style.display = 'none';
+      // Zobrazení modálního okna při načtení stránky
+     document.getElementById('ppopMinimizedPopup').style.display = 'flex';
+    });
+
+    // Uzavření modálního okna při kliknutí mimo něj
+    window.addEventListener('click', function(event) {
+      if (event.target === document.getElementById('ppopOverlay')) {
+        document.getElementById('ppopOverlay').style.display = 'none';
+              // Zobrazení modálního okna při načtení stránky
+     document.getElementById('ppopMinimizedPopup').style.display = 'flex';
+      }
+    });
+
+
+
+    // Zobrazení minimálního popupu při kliknutí na tlačítko
+    document.getElementById('ppopMinimizedPopup').addEventListener('click', () => {
+      document.getElementById('ppopOverlay').style.display = 'flex';
+            // Zobrazení modálního okna při načtení stránky
+     document.getElementById('ppopMinimizedPopup').style.display = 'none';
+    
+    });
+    
+        // Zobrazení modálního okna při načtení stránky
+        document.getElementById('ppopOverlay').style.display = 'flex';
+
+        // Zobrazení modálního okna při načtení stránky
+        document.getElementById('ppopMinimizedPopup').style.display = 'none';
+
+</script>
